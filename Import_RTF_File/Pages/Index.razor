@@ -1,0 +1,28 @@
+﻿@page "/"
+
+@using Import_RTF_File.Data;
+@using Syncfusion.Blazor.RichTextEditor;
+@using Syncfusion.Blazor.Inputs;
+@inject ExportService exportService
+
+<SfRichTextEditor ID="defalt_RTE" @ref="RteObj" @bind-Value="@rteValue" EnableHtmlSanitizer="false">
+    <RichTextEditorImageSettings SaveUrl="api/SampleData/Save" Path="../images/"></RichTextEditorImageSettings>
+</SfRichTextEditor>
+<SfUploader ID="UploadFiles">
+    <UploaderAsyncSettings SaveUrl="api/SampleData/Import" RemoveUrl="https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove"></UploaderAsyncSettings>
+    <UploaderEvents Success="@onSuccess"></UploaderEvents>
+</SfUploader>
+
+
+@code {
+    SfRichTextEditor RteObj;
+    private string rteValue { get; set; } = "<div>Example of Importing Text File into the Editor</div>";
+
+    public void onSuccess(SuccessEventArgs args)
+    {
+        var headers = args.Response.Headers.ToString();
+        var header = headers.Split("rtevalue: ");
+        header = header[1].Split("\r");
+        this.rteValue = header[0];
+    }
+}
