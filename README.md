@@ -1,5 +1,6 @@
-# import-rtf-file-to-blazor-rich-text-editor
-Import RTF file to Blazor Rich Text Editor.
+# Import rtf file in Blazor Rich Text Editor
+
+
 ## Project pre-requisites
 Make sure that you have the compatible versions of Visual Studio Code and .NET Core SDK 3.1.2 or above version in your machine before starting to work on this project.
 
