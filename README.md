@@ -46,4 +46,13 @@ Start the app, open the importer page, use the file uploader to pick an RTF file
 ## Troubleshooting
 
 - Ensure NuGet packages are restored and the project builds before running.
-- If the RTF content does not import correctly, verify the uploader success handler and any RTF parsing logic.
+- If export fails, check browser console and server logs for errors and confirm any required licenses are configured.
+
+## Support
+
+This sample is provided for demonstration purposes. For issues, open an issue in the repository.
+
+## See also
+
+- [Online examples](https://blazor.syncfusion.com/demos/rich-text-editor/overview?theme=fluent2)
+- [Documentation](https://blazor.syncfusion.com/documentation/rich-text-editor/getting-started-webapp)
